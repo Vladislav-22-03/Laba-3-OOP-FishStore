@@ -1,4 +1,5 @@
-﻿using Laba_3_OOP_FishStore.Features.DtoModels.User;
+﻿using FishStore.Logic.DtoModels.Filters;
+using Laba_3_OOP_FishStore.Features.DtoModels.User;
 
 namespace Laba_3_OOP_FishStore.Features.Interfaces.Managers
 {
@@ -6,5 +7,7 @@ namespace Laba_3_OOP_FishStore.Features.Interfaces.Managers
 
     {
         void Create(EditUser editUser);
+
+        Task<UserFilterDto> GetUserByMail(string mail);
     }
 }

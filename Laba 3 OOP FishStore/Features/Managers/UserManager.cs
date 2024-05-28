@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FishStore.Logic.DtoModels.Filters;
 using FishStore.Logic.Interfaces.Repositories;
 using FishStore.Logic.Interfaces.Services;
 using FishStore.Storage.Database;
@@ -37,6 +38,13 @@ namespace Laba_3_OOP_FishStore.Features.Managers
 
             _dataContext.SaveChanges();
         }
+        //После того, как получил пользователя - проверяешь, совпадает пароль или нет. В контроллере пропишешь
+        public async Task<UserFilterDto> GetUserByMail(string mail)
+        {
+            var user = await _userRepository.GetByMail(_dataContext, mail);
+            return _mapper.Map<UserFilterDto>(user);
+        }
+
 
         //public void Update(EditCenter updateCenter)
         //{

@@ -1,6 +1,7 @@
 ﻿using FishStore.Logic.Interfaces.Repositories;
 using FishStore.Storage.Database;
 using FishStore.Storage.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FishStore.Logic.Repositories
 {
@@ -13,32 +14,37 @@ namespace FishStore.Logic.Repositories
 
 			return user;
 		}
+        public async Task<User> GetByMail(DataContext context, string mail)
+        {
+            var userDb = await context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Mail == mail);
+            return userDb;
+        }
 
-		//public Center Update(DataContext dataContext, Center center)
-		//{
-		//	var centerDb = dataContext.Centers.FirstOrDefault(x => x.IsnNode == center.IsnNode)
-		//		?? throw new Exception($"Центр с идентификатором {center.IsnNode} не найден");
+        //public Center Update(DataContext dataContext, Center center)
+        //{
+        //	var centerDb = dataContext.Centers.FirstOrDefault(x => x.IsnNode == center.IsnNode)
+        //		?? throw new Exception($"Центр с идентификатором {center.IsnNode} не найден");
 
-		//	centerDb.Code = center.Code;
-		//	centerDb.Name = center.Name;
+        //	centerDb.Code = center.Code;
+        //	centerDb.Name = center.Name;
 
-		//	return centerDb;
-		//}
+        //	return centerDb;
+        //}
 
-		//public void Delete(DataContext dataContext, Guid isnNode)
-		//{
-		//	var centerDb = dataContext.Centers.FirstOrDefault(x => x.IsnNode == isnNode)
-		//		?? throw new Exception($"Центр с идентификатором {isnNode} не найден");
+        //public void Delete(DataContext dataContext, Guid isnNode)
+        //{
+        //	var centerDb = dataContext.Centers.FirstOrDefault(x => x.IsnNode == isnNode)
+        //		?? throw new Exception($"Центр с идентификатором {isnNode} не найден");
 
-		//	dataContext.Centers.Remove(centerDb);
-		//}
+        //	dataContext.Centers.Remove(centerDb);
+        //}
 
-		//public Center GetById(DataContext dataContext, Guid isnNode)
-		//{
-		//	var centerDb = dataContext.Users.AsNoTracking().FirstOrDefault(x => x.IsnNode == isnNode)
-		//		?? throw new Exception($"Центр с идентификатором {isnNode} не найден");
+        //public Center GetById(DataContext dataContext, Guid isnNode)
+        //{
+        //	var centerDb = dataContext.Users.AsNoTracking().FirstOrDefault(x => x.IsnNode == isnNode)
+        //		?? throw new Exception($"Центр с идентификатором {isnNode} не найден");
 
-		//	return centerDb;
-		//}
-	}
+        //	return centerDb;
+        //}
+    }
 }
