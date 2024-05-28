@@ -8,7 +8,7 @@ namespace FishStore.Logic.Repositories
 	{
 		public User Create(DataContext dataContext, User user)
 		{
-			user.IsnNode = Guid.NewGuid();
+			//user.IsnNode = Guid.NewGuid();
 			dataContext.Users.Add(user);
 
 			return user;

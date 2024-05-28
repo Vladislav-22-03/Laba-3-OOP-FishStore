@@ -1,1 +1,75 @@
-﻿Hi Gays!
+﻿@{
+    ViewData["Title"] = "Главная страница - Спасение зеркальных карпов";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h1 {
+            color: #4CAF50;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .buttons a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Спасение зеркальных карпов</h1>
+    </header>
+    <div class="content">
+        <h1>Помогите спасти зеркальных карпов</h1>
+        <p>
+            Зеркальные карпы находятся под угрозой исчезновения из-за изменения климата, загрязнения водоёмов и незаконного рыболовства. Эти красивые и уникальные рыбы играют важную роль в экосистеме и требуют нашей защиты.
+        </p>
+        <p>
+            Без вашей помощи численность зеркальных карпов будет продолжать снижаться, что приведет к непоправимым последствиям для биологического разнообразия и здоровья водных экосистем. Ваш вклад может помочь сохранить этих замечательных существ для будущих поколений.
+        </p>
+        <div class="buttons">
+            @* Подставишь свои контроллер и метод из контроллера для описания страницы *@
+            <a href="@Url.Action("User", "Registration")">Регистрация</a>
+            <a href="@Url.Action("Log", "Login")">Войти в аккаунт</a>
+        </div>
+    </div>
+</body>
+</html>

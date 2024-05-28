@@ -8,7 +8,6 @@ namespace FishStore.Storage.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid IsnNode { get; set; }
 
-
         [Required, MaxLength(255)]
         public string Name { get; set; }
 
@@ -18,6 +17,8 @@ namespace FishStore.Storage.Models
         [Required, MaxLength(255)]
         public string Password { get; set; }
 
+        [Required, MaxLength(255)]
+        public string Mail { get; set; }
         //public virtual Center Center { get; set; }
     }
 }

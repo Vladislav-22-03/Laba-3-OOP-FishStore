@@ -7,14 +7,17 @@ namespace Laba_3_OOP_FishStore.Features.DtoModels.User
 
         public Guid? IsnNode { get; set; }
 
+        [Required, MaxLength(255)]
+        public string? Name { get; set; }
 
         [Required, MaxLength(255)]
-        public string Name { get; set; }
+        public string? SurName { get; set; }
 
         [Required, MaxLength(255)]
-        public string SurName { get; set; }
+        public string? Password { get; set; }
 
-        [Required, MaxLength(255)]
-        public string Password { get; set; }
+        [Required, MaxLength(255), EmailAddress]
+        public string? Mail { get; set; }
+
     }
 }

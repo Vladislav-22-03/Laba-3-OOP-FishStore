@@ -16,6 +16,7 @@ namespace FishStore.Storage.Models
         [Required, MaxLength(255)]
         public string Name { get; set; }
 
+  
         //[InverseProperty(nameof(User.Center))]
         //public virtual ICollection<User> Users { get; set; }
     }
