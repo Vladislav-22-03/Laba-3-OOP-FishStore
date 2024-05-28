@@ -18,8 +18,4 @@
     <ProjectReference Include="..\FishStore.Logic\FishStore.Logic.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Mappers\" />
-  </ItemGroup>
-
 </Project>

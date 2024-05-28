@@ -30,6 +30,7 @@ namespace Laba_3_OOP_FishStore.Features.Managers
                 IsnNode = editUser.IsnNode ?? Guid.NewGuid(),
                 Name = editUser.Name,
                 SurName = editUser.SurName,
+                Mail = editUser.Mail, 
                 Password = editUser.Password,
             };
             _userRepository.Create(_dataContext, user);

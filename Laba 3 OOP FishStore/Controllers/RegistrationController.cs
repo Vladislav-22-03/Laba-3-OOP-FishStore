@@ -28,10 +28,18 @@ namespace Laba_3_OOP_FishStore.Controllers
             {
 
                 // Добавление пользователя в контекст данных и сохранение его в базе данных
-                userManager.Create(model);
-
-                // Пример редиректа на главную страницу после регистрации
-                return RedirectToAction("Index", "Home");
+                try
+                {
+                    userManager.Create(model);
+                    // Пример редиректа на главную страницу после регистрации
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (Exception ex)
+                {
+                    // Пример редиректа на главную страницу после регистрации
+                    return RedirectToAction("Index", "Home");
+                }
+ 
             }
 
             // Если валидация модели не удалась, вернуть представление с ошибками
