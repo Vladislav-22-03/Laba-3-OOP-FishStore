@@ -1,0 +1,26 @@
+﻿@using Laba_3_OOP_FishStore.Features.DtoModels.Donation
+@model EditDonation
+
+<h2>Пожертвовать средства</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+<form asp-action="Donate" method="post">
+    <div class="form-group">
+        <label asp-for="Amount">Сумма пожертвования (в рублях)</label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Пожертвовать</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

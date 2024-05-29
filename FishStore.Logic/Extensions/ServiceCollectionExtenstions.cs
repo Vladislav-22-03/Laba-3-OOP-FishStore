@@ -15,6 +15,9 @@ namespace FishStore.Logic.Extensions
 
             services.AddSingleton<ICenterRepository, CenterRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
+
+            services.AddSingleton<IDonationService, DonationService>();
+            services.AddSingleton<IDonationRepository, DonationRepository>();
         }
     }
 }

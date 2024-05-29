@@ -12,5 +12,7 @@ namespace FishStore.Storage.Database
         public virtual DbSet<Center> Centers { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<Donation> Donations { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace Laba_3_OOP_FishStore.Extensions
 
             services.AddTransient<ICenterManager, CenterManager>();
             services.AddTransient<IUserManager, UserManager>();
+            services.AddTransient<IDonationManager, DonationManager>();
         }
     }
 }
