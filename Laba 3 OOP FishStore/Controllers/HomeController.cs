@@ -10,9 +10,9 @@ namespace Laba_3_OOP_FishStore.Controllers
 
         }
         [HttpGet, Route("")]
-        public ActionResult Index()
+        public ActionResult Index(Guid id)
         {
-            return View();
+            return View(id);
         }
     }
 }

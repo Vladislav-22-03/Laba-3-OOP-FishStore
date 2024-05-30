@@ -8,5 +8,8 @@ namespace Laba_3_OOP_FishStore.Features.DtoModels.Donation
 
         [Required, MaxLength(255)]
         public string? Amount { get; set; }
+
+        public Guid UserID { get; set; }
+
     }
 }

@@ -1,7 +1,33 @@
-﻿@using Laba_3_OOP_FishStore.Features.DtoModels.Donation
+﻿@using Laba_3_OOP_FishStore.Controllers
+@using Laba_3_OOP_FishStore.Features.DtoModels.Donation
 @model EditDonation
 
-<h2>Пожертвовать средства</h2>
+<body>
+    <div class="content">
+        <div class="form-container">
+            <h2>Текущие данные</h2>
+            @using (Html.BeginForm(nameof(DonationController.AddDonation), "Donation", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+
+                @Html.HiddenFor(m => m.IsnNode)
+                @Html.ValidationMessageFor(m => m.IsnNode)
+
+
+                @Html.HiddenFor(m => m.UserID)
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Amount, "Колво пожелтвований")
+                    @Html.TextBoxFor(m => m.Amount, htmlAttributes: new { @class = "form-control" }) <!-- Исправлено с "from-control" на "form-control" -->
+                    @Html.ValidationMessageFor(m => m.Amount)
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+            }
+        </div>
+    </div>
+</body>
+
+@* <h2>Пожертвовать средства</h2>
 
 @if (TempData["Message"] != null)
 {
@@ -10,7 +36,7 @@
     </div>
 }
 
-<form asp-action="Donate" method="post">
+<form asp-action="AddDonation" method="post">
     <div class="form-group">
         <label asp-for="Amount">Сумма пожертвования (в рублях)</label>
         <input asp-for="Amount" class="form-control" />
@@ -23,4 +49,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+} *@

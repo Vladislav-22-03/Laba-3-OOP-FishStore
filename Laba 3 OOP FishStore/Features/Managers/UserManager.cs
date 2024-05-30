@@ -31,7 +31,7 @@ namespace Laba_3_OOP_FishStore.Features.Managers
                 IsnNode = editUser.IsnNode ?? Guid.NewGuid(),
                 Name = editUser.Name,
                 SurName = editUser.SurName,
-                Mail = editUser.Mail, 
+                Mail = editUser.Mail,
                 Password = editUser.Password,
             };
             _userRepository.Create(_dataContext, user);
@@ -43,6 +43,13 @@ namespace Laba_3_OOP_FishStore.Features.Managers
         {
             var user = await _userRepository.GetByMail(_dataContext, mail);
             return _mapper.Map<UserFilterDto>(user);
+        }
+
+        public User GetUser(string mail, string password)
+        {
+            var a = _dataContext.Users.FirstOrDefault(u => u.Mail == mail && u.Password == password);
+            if (a != null) return a;
+            return null;
         }
 
 

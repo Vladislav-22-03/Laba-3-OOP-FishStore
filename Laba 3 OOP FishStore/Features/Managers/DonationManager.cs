@@ -28,6 +28,7 @@ namespace Laba_3_OOP_FishStore.Features.Managers
             {
                 IsnNode = editDonation.IsnNode ?? Guid.NewGuid(),
                 Amount = editDonation.Amount,
+                UserID = editDonation.UserID,
             };
             _donationRepository.Create(_dataContext, donation);
 

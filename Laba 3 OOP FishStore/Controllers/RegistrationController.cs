@@ -30,8 +30,17 @@ namespace Laba_3_OOP_FishStore.Controllers
                 // Добавление пользователя в контекст данных и сохранение его в базе данных
                 try
                 {
-                    userManager.Create(model);
-                    // Пример редиректа на главную страницу после регистрации
+                    var _model = new EditUser
+                    {
+                        IsnNode = model.IsnNode == Guid.Empty ? Guid.NewGuid() : model.IsnNode,
+                        SurName = model.SurName,
+                        Name = model.Name,
+                        Mail = model.Mail,
+                        Password = model.Password,
+                    };
+                    userManager.Create(_model);
+
+
                     return RedirectToAction("Index", "Home");
                 }
                 catch (Exception ex)
