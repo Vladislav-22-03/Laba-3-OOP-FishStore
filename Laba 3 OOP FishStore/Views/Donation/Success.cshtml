@@ -17,7 +17,7 @@
                 @Html.HiddenFor(m => m.UserID)
 
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Amount, "Колво пожелтвований")
+                    @Html.LabelFor(m => m.Amount, "Количество пожертвований (в рублях)")
                     @Html.TextBoxFor(m => m.Amount, htmlAttributes: new { @class = "form-control" }) <!-- Исправлено с "from-control" на "form-control" -->
                     @Html.ValidationMessageFor(m => m.Amount)
                 </div>
